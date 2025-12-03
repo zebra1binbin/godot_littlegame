@@ -110,11 +110,15 @@ Godot 内建物理系统与动画系统
 场景树管理游戏模块
 
 📂 项目结构（示例）
+```
 project/
  ├── scenes/
  ├── scripts/
  ├── assets/
  └── README.md
+```
+
+
 
 
 📝 总结
