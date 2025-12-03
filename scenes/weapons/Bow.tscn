@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://cj04fu1riudq1"]
+
+[ext_resource type="Script" uid="uid://dvdcbpwrug8ly" path="res://scripts/weapon/Bow.cs" id="1_5b2uk"]
+[ext_resource type="PackedScene" uid="uid://bmose3o0krqay" path="res://scenes/weapons/Arrow.tscn" id="1_dt7w1"]
+[ext_resource type="Texture2D" uid="uid://cokx4wvjp5oof" path="res://assets/sprites/weapons/Bow01.png" id="1_q00il"]
+[ext_resource type="Texture2D" uid="uid://dvmfr3jwm4ecn" path="res://assets/sprites/weapons/Bow02.png" id="2_5b2uk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w2ba"]
+atlas = ExtResource("1_q00il")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa88d"]
+atlas = ExtResource("1_q00il")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh5kp"]
+atlas = ExtResource("2_5b2uk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lp3dq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w2ba")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa88d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh5kp")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="Bow" type="Node2D"]
+script = ExtResource("1_5b2uk")
+ArrowScene = ExtResource("1_dt7w1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lp3dq")
+animation = &"shoot"
+
+[node name="Arrow" parent="." instance=ExtResource("1_dt7w1")]
+position = Vector2(5, -1)
+rotation = -0.014464222

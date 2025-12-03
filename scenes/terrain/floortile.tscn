@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd0ltpw8oblvm"]
+
+[ext_resource type="Texture2D" uid="uid://co7dpswqc5lf8" path="res://assets/sprites/world_tileset.png" id="1_h6uex"]
+[ext_resource type="Script" uid="uid://djsbhtgep52tp" path="res://scripts/resource/FloorTile.cs" id="1_p86s8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p86s8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6uex"]
+size = Vector2(16, 16)
+
+[node name="FloorTile" type="RigidBody2D"]
+script = ExtResource("1_p86s8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h6uex")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p86s8")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.1)
+shape = SubResource("RectangleShape2D_h6uex")

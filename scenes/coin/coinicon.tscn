@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dppa6ddf703x"]
+
+[ext_resource type="Texture2D" uid="uid://b5bbjv11i7r0r" path="res://assets/sprites/coin.png" id="1_d6om1"]
+[ext_resource type="Script" uid="uid://c7108mn7a1258" path="res://scripts/coin/CoinIcon.cs" id="1_qhf2y"]
+
+[node name="CoinIcon" type="Node2D"]
+script = ExtResource("1_qhf2y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(-13, 19)
+scale = Vector2(2.3877485, 2.3877485)
+texture = ExtResource("1_d6om1")
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 10)
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "123"

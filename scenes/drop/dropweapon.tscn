@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cca60fwtd5gpr"]
+
+[ext_resource type="Script" uid="uid://bsxwpso4u4ds8" path="res://scripts/drop/DropWeapon.cs" id="1_f5v1t"]
+[ext_resource type="SpriteFrames" uid="uid://bbewshsfl2uco" path="res://assets/resource/frames/SwordFrames.tres" id="1_fyy2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5nk4"]
+size = Vector2(225, 512)
+
+[node name="DropWeapon" type="Area2D"]
+script = ExtResource("1_f5v1t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_fyy2n")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-15.5, 1)
+shape = SubResource("RectangleShape2D_w5nk4")

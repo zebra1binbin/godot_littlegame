@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://f1231lvg2slc"]
+
+[ext_resource type="Script" uid="uid://cox834drfyjk0" path="res://scripts/weapon/Weapon.cs" id="1_feku7"]
+[ext_resource type="Texture2D" uid="uid://c62504mumufvh" path="res://assets/sprites/weapons/16x16SwordOutlined.png" id="2_x6a7j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
+atlas = ExtResource("2_x6a7j")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
+atlas = ExtResource("2_x6a7j")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
+atlas = ExtResource("2_x6a7j")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o66wt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ni07")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ni07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke2ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujl30")
+}],
+"loop": false,
+"name": &"slash",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uhfnu"]
+radius = 208.97832
+
+[node name="Sword" type="Node2D"]
+script = ExtResource("1_feku7")
+
+[node name="Weapon" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.9887342, -5.999999)
+scale = Vector2(0.04301276, 0.023525517)
+sprite_frames = SubResource("SpriteFrames_o66wt")
+animation = &"idle"
+
+[node name="HitBox" type="Area2D" parent="."]
+position = Vector2(7, -5.999999)
+scale = Vector2(0.04301276, 0.023525517)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0.2619171, -4.5776367e-05)
+shape = SubResource("CircleShape2D_uhfnu")

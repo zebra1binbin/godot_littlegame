@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxsqm36e5bjab"]
+
+[ext_resource type="Script" uid="uid://c3ipojr8duj50" path="res://scripts/control/Start.cs" id="1_jaeev"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jaeev")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7529412, 0.627451, 0.6627451, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "练习小游戏"
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "开始游戏"
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "设置"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "退出游戏"

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://dptxhp8ep3jpn"]
+
+[ext_resource type="Script" uid="uid://cdr7p74wu27iv" path="res://scripts/global/AudioManager.cs" id="1_i5r0u"]
+[ext_resource type="AudioStream" uid="uid://djim2b4p8m2yf" path="res://assets/sounds/coin.wav" id="1_k7fn7"]
+[ext_resource type="AudioStream" uid="uid://b2d7nq24s51na" path="res://assets/sounds/hit.WAV" id="2_6e4by"]
+[ext_resource type="AudioStream" uid="uid://cpn5dnxd3r1mx" path="res://assets/sounds/tap.wav" id="3_i5r0u"]
+[ext_resource type="AudioStream" uid="uid://dtw4oi2ttg4eo" path="res://assets/sounds/jump.wav" id="4_3pvkh"]
+[ext_resource type="AudioStream" uid="uid://dfaydin04fsu" path="res://assets/sounds/whsh.WAV" id="5_n8pvu"]
+[ext_resource type="AudioStream" uid="uid://b2vc8wn47xx6x" path="res://assets/sounds/hurt.wav" id="7_0micp"]
+
+[node name="GlobalAudio" type="Node2D"]
+script = ExtResource("1_i5r0u")
+
+[node name="CoinPickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_k7fn7")
+bus = &"SFX"
+
+[node name="EnemyHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6e4by")
+bus = &"SFX"
+
+[node name="FootstepSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_i5r0u")
+bus = &"SFX"
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3pvkh")
+bus = &"SFX"
+
+[node name="WeaponSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_n8pvu")
+bus = &"SFX"
+
+[node name="PlayerHurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_0micp")
+bus = &"SFX"

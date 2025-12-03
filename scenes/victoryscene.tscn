@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c60ln2xgssc88"]
+
+[ext_resource type="Script" uid="uid://b0ubok8c550la" path="res://scripts/control/VictoryScene.cs" id="1_j0g87"]
+
+[node name="VictoryScene" type="CanvasLayer"]
+script = ExtResource("1_j0g87")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.056291588, 0.056291603, 0.056291595, 0.6039216)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "胜利"
+
+[node name="Coin" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "金币："
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "主菜单"

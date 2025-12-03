@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://cj0f7ewduaqrr"]
+
+[ext_resource type="Script" uid="uid://isq4570nbi4o" path="res://scripts/enemys/ArmoredEnemy.cs" id="1_b75et"]
+[ext_resource type="Texture2D" uid="uid://dw2phqf4edmt6" path="res://assets/sprites/slime_purple.png" id="1_vi3uv"]
+[ext_resource type="PackedScene" uid="uid://cca60fwtd5gpr" path="res://scenes/drop/dropweapon.tscn" id="2_wpaav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi3uv"]
+atlas = ExtResource("1_vi3uv")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sww4w"]
+atlas = ExtResource("1_vi3uv")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luyff"]
+atlas = ExtResource("1_vi3uv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqqpd"]
+atlas = ExtResource("1_vi3uv")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1g4h"]
+atlas = ExtResource("1_vi3uv")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b75et"]
+atlas = ExtResource("1_vi3uv")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm01e"]
+atlas = ExtResource("1_vi3uv")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2cie"]
+atlas = ExtResource("1_vi3uv")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnw12"]
+atlas = ExtResource("1_vi3uv")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sww4w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi3uv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sww4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luyff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqqpd")
+}],
+"loop": false,
+"name": &"die",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1g4h")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b75et")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm01e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2cie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnw12")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi3uv"]
+size = Vector2(10, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b75et"]
+size = Vector2(10, 15)
+
+[node name="ArmoredEnemy" type="CharacterBody2D"]
+script = ExtResource("1_b75et")
+DropWeaponScene = ExtResource("2_wpaav")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sww4w")
+animation = &"die"
+autoplay = "idle"
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_vi3uv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_b75et")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://40w1cwhd11eq"]
+
+[ext_resource type="Script" uid="uid://co5huvc7eqtn1" path="res://scripts/killzone/Killzone.cs" id="1_xlapc"]
+
+[node name="Killzone" type="Area2D"]
+script = ExtResource("1_xlapc")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

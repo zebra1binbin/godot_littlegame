@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://lshob5acg7um"]
+
+[ext_resource type="Texture2D" uid="uid://brdcykuu4fx61" path="res://assets/sprites/Colors.png" id="1_hokgt"]
+
+[node name="HeartPrefab" type="Sprite2D"]
+scale = Vector2(4, 4)
+texture = ExtResource("1_hokgt")
+region_enabled = true
+region_rect = Rect2(129, 210, 14, 13)

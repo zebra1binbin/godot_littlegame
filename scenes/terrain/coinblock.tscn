@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://deqkktl5wfgo5"]
+
+[ext_resource type="Script" uid="uid://cmh0dq5pa30ma" path="res://scripts/resource/CoinBlock.cs" id="1_00jcm"]
+[ext_resource type="PackedScene" uid="uid://bp8wkahx4q0w6" path="res://scenes/coin/coin.tscn" id="2_r0ju4"]
+[ext_resource type="Texture2D" uid="uid://co7dpswqc5lf8" path="res://assets/sprites/world_tileset.png" id="3_r0ju4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4jnn"]
+size = Vector2(16, 16)
+
+[node name="CoinBlock" type="StaticBody2D"]
+script = ExtResource("1_00jcm")
+CoinCount = 10
+CoinScene = ExtResource("2_r0ju4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n4jnn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_r0ju4")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
+
+[node name="CoinSpawnPoint" type="Marker2D" parent="."]

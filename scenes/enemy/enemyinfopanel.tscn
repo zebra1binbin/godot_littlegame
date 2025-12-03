@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmufcoq0kmpgq"]
+
+[ext_resource type="Texture2D" uid="uid://cee01urilto8s" path="res://assets/sprites/1.png" id="1_ruiyf"]
+[ext_resource type="Texture2D" uid="uid://ce5hjyts6w5pf" path="res://assets/sprites/56.png" id="2_cnbpu"]
+
+[node name="EnemyInfoPanel" type="Node2D"]
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = 3.0
+offset_right = 93.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 8
+text = "test"
+text_overrun_behavior = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 26.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_ruiyf")
+texture_over = ExtResource("1_ruiyf")
+texture_progress = ExtResource("2_cnbpu")
