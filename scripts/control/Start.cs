@@ -4,18 +4,22 @@ public partial class Start : Control
 {
     [Export] public string GameScenePath = "res://scenes/game.tscn";
     [Export] public string SettingScenePath = "res://scenes/settings.tscn";
+    [Export] public string ExplanationScenePath = "res://scenes/explanation.tscn";
 
     private Button _startButton;
     private Button _settingsButton;
+    private Button _explanationButton;
     private Button _quitButton;
 
     public override void _Ready()
     {
         _startButton = GetNode<Button>("CenterContainer/VBoxContainer/StartButton");
         _settingsButton = GetNode<Button>("CenterContainer/VBoxContainer/SettingsButton");
+        _explanationButton = GetNode<Button>("CenterContainer/VBoxContainer/ExplanationButton");
         _quitButton = GetNode<Button>("CenterContainer/VBoxContainer/QuitButton");
         _startButton.Pressed += OnStartButtonPressed;
         _settingsButton.Pressed += OnSettingsButtonPressed;
+        _explanationButton.Pressed += OnExplanationButtonPressed;
         _quitButton.Pressed += OnQuitButtonPressed;
     }
 
@@ -48,6 +52,21 @@ public partial class Start : Control
             GD.PrintErr($"Error: {error}");
         }
     }
+
+
+    private void OnExplanationButtonPressed()
+    {
+        if (!ResourceLoader.Exists(ExplanationScenePath))
+        {
+            return;
+        }
+        Error error = GetTree().ChangeSceneToFile(ExplanationScenePath);
+        if (error != Error.Ok)
+        {
+            GD.PrintErr($"Error: {error}");
+        }
+    }
+
 
     private void OnQuitButtonPressed()
     {

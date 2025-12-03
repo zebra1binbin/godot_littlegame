@@ -44,6 +44,10 @@ text = "开始游戏"
 layout_mode = 2
 text = "设置"
 
+[node name="ExplanationButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "说明"
+
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "退出游戏"

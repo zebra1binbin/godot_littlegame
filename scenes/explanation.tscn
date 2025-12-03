@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://5eunjgsu6ehl"]
 
-[ext_resource type="Script" uid="uid://csjes1yqdl4hh" path="res://scripts/control/Settings.cs" id="1_51dk3"]
+[ext_resource type="Script" uid="uid://bo7wqc1fbd13e" path="res://scripts/control/Explanation.cs" id="1_51dk3"]
 
 [node name="explanation" type="Control"]
 layout_mode = 3
@@ -45,7 +45,9 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer_Controls2"]
 layout_mode = 2
 text = "项目源码地址：
-https://github.com/zebra1binbin/godot_littlegame.git"
+https://github.com/zebra1binbin/godot_littlegame.git
+可执行文件地址：
+https://github.com/zebra1binbin/godot_littlegame/releases/tag/V1"
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer_Controls2"]
 layout_mode = 2
